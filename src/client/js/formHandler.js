@@ -8,10 +8,11 @@ function handleSubmit(event) {
    checkForName(formText)
 
     console.log("::: Form Submitted :::")
-    fetch('http://localhost:8081/test')
+    fetch('http://api.openweathermap.org/data/2.5/weather?zip=21040,it&appid=6ad6f4e238882457dcb737040cf28fcb')
     .then(res => res.json())
     .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
+        // console.log(res.weather[0].main);
+        document.getElementById('results').innerHTML = res.weather[0].main
     })
 }
 
